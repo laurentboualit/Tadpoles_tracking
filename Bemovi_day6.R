@@ -12,11 +12,11 @@ T5<-Sys.time() #time couting point 1
 #I. Dataframe preparation
 
 
-data <- read.xlsx("/home/laurent/Dropbox/Boulot/PHD/Projects/ASTA/TAD_VS_CPF/Test_avec_solvant_2/DB/Suivi_tadpoles_multiple_days.xlsx", sheetIndex = 3)
-data$file <- rep(c(1:6),20)
+data <- read.xlsx("/home/laurent/Dropbox/Boulot/PHD/Projects/ASTA/TAD_VS_CPF/Test_avec_solvant_2/DB/Suivi_tadpoles_multiple_days.xlsx", sheetIndex = 3) # import data on concentration, dejellying conditions and wells.
+data$file <- rep(c(1:6),20) # add file number for preparing the video.description file for Bemovi
 
 
-#1.  Let's add the numerical conc. 
+#1.  Let's add the numerical conc. to the file for future analyses
 
 conc <- c("CTL","C1","C2","C3","C4","DMSO")
 nom_conc <- c("0","0.0001","0.001","0.01","0.1", "DMSO")
@@ -36,9 +36,9 @@ data_clean <- data
 
 ##II. VIDEO ANALYSIS
 
-#Let's take the ten first video files for adjusting the threshold for all videos
+#Let's take the six first video files for adjusting the threshold for all videos
 
-#video.description <- data_clean[c(1:10),]
+#video.description <- data_clean[c(1:6),]
 #write.table(x = video.description, file = "/home/laurent/Dropbox/Boulot/PHD/Projects/TAD_VS/TAD_VS_CPF/Test_avec_solvant/R_Script/Swimming_analyse/Fedora/0 _video_description/video.description.txt",sep = "\t", row.names = FALSE)
 
 # project directory (you create this one yourself)
